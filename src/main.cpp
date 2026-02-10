@@ -51,7 +51,6 @@ int main()
   for (int grain_size : grain_sizes) {
     image.create(display_width, display_height);
 
-    std::atomic<long long> tiles{0}; // optional: count how many tiles ran
 
     auto t0 = std::chrono::high_resolution_clock::now();
 
@@ -62,7 +61,6 @@ int main()
       ),
       [&](const oneapi::tbb::blocked_range2d<int>& r) {
 
-        ++tiles; // optional
 
         for (int row = r.rows().begin(); row != r.rows().end(); ++row) {
           for (int column = r.cols().begin(); column != r.cols().end(); ++column) {
