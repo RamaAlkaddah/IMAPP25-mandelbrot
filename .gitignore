@@ -5,3 +5,14 @@ build/
 *.out
 *.exe
 *.bak
+
+# Output files (keep example files in output/ and results/ directories)
+/mandelbrot.png
+/grain_time.txt
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

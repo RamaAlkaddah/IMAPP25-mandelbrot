@@ -15,6 +15,6 @@ string(APPEND CMAKE_CXX_FLAGS_DEBUG
 string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG
        " -fsanitize=address -fno-omit-frame-pointer")
 
-add_executable(mandelbrot main.cpp)
+add_executable(mandelbrot src/main.cpp)
 target_link_libraries(mandelbrot PRIVATE TBB::tbb sfml-graphics)
 
