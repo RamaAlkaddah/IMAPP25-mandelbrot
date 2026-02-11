@@ -8,7 +8,7 @@
 #include <chrono>
 #include <fstream>
 #include <vector>
-#include <atomic>
+
 
 using Complex = std::complex<double>;
 
@@ -53,7 +53,7 @@ int main()
 
 
     auto t0 = std::chrono::high_resolution_clock::now();
-
+//parallel_for(range, lambda_function, partitioner);
     oneapi::tbb::parallel_for(
       oneapi::tbb::blocked_range2d<int>(
         0, display_height, grain_size,
